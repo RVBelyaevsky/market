@@ -23,8 +23,8 @@ class Product(models.Model):
     product_category = models.ForeignKey(Category, on_delete=models.SET_NULL, verbose_name='Категория продукта', **NULLABLE,
                                          related_name='categories')
     product_price = models.IntegerField(verbose_name='Цена')
-    created_at = models.DateField(verbose_name='Дата создания')
-    updated_at = models.DateField(verbose_name='Дата последнего изменения', **NULLABLE)
+    created_at = models.DateField(auto_now_add=True)
+    updated_at = models.DateField(auto_now=True)
 
     class Meta:
         verbose_name = 'Продукт'
