@@ -25,7 +25,7 @@ class Product(models.Model):
     product_price = models.IntegerField(verbose_name='Цена')
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True, null=True)
-    manufactured_at = models.DateField(auto_now=True, null=True)
+    #manufactured_at = models.DateField(auto_now=True, null=True)
 
 
     class Meta:
