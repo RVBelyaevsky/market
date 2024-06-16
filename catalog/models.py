@@ -24,7 +24,7 @@ class Product(models.Model):
                                          related_name='categories')
     product_price = models.IntegerField(verbose_name='Цена')
     created_at = models.DateField(auto_now_add=True)
-    updated_at = models.DateField(auto_now=True)
+    updated_at = models.DateField(auto_now=True, null=True)
 
     class Meta:
         verbose_name = 'Продукт'
