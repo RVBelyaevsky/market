@@ -52,7 +52,7 @@ class Command(BaseCommand):
         Category.objects.bulk_create(category_for_create)
 
         for product in Command.json_read_products():
-            if product['fields']['product_category'] != None:
+            if product['fields']['product_category'].isnot(None):
                 prod_cat = Category.objects.get(pk=product['fields']['product_category'])
             else:
                 prod_cat = None
