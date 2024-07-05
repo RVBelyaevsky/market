@@ -1,0 +1,70 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "category_name": "beer",
+      "category_description": "Очень вкусное пиво со всех стран мира"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 11,
+    "fields": {
+      "category_name": "Виски",
+      "category_description": "Крепкий алкоголь"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 21,
+    "fields": {
+      "product_name": "haineken",
+      "product_description": "Heineken – это монобренд, который принадлежит одноименной нидерландской компании, занимающей первое место среди европейских – и вторую позицию в списке мировых – пивоваренных гигантов.",
+      "product_image": "products/heiniken.png",
+      "product_category": 1,
+      "product_price": 98,
+      "created_at": "2024-07-04",
+      "updated_at": "2024-07-04"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 22,
+    "fields": {
+      "product_name": "asahi",
+      "product_description": "no bad beer",
+      "product_image": "products/asahi.png",
+      "product_category": 1,
+      "product_price": 198,
+      "created_at": "2024-07-04",
+      "updated_at": "2024-07-04"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 23,
+    "fields": {
+      "product_name": "red lable",
+      "product_description": "Джонни Уокер Рэд Лэйбл Блендед купажированный виски Johnnie Walker Светло-янтарный цвет. Аромат со свежими нотами цветов и фруктов, спелой груши, ванили и меда, с тонкими древесными нюансами. Мягкий, округлый, выразительный вкус, переходящий в продолжительное сладковатое послевкусие. Рекомендуется подавать в качестве дижестива, либо в составе классических и авторских коктейлей.",
+      "product_image": "products/redLable.png",
+      "product_category": 11,
+      "product_price": 900,
+      "created_at": "2024-07-04",
+      "updated_at": "2024-07-04"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 24,
+    "fields": {
+      "product_name": "lawsons",
+      "product_description": "no bad whisky",
+      "product_image": "products/lawsons.png",
+      "product_category": 11,
+      "product_price": 700,
+      "created_at": "2024-07-04",
+      "updated_at": "2024-07-04"
+    }
+  }
+]
