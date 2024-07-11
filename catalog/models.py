@@ -36,3 +36,21 @@ class Product(models.Model):
 
     def __str__(self):
         return self.product_name
+
+
+class Blog(models.Model):
+    blog_title = models.CharField(max_length=100, verbose_name='Заголовок блога')
+    blog_slug = models.CharField(max_length=100, verbose_name='slug блога', **NULLABLE)
+    blog_content = models.TextField(verbose_name='Содержание блога')
+    blog_image = models.ImageField(upload_to='blogs/', verbose_name='Изображение блога', **NULLABLE)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
+    is_published = models.BooleanField(verbose_name='признак публикации')
+    count_views = models.IntegerField(verbose_name='количество просмотров', default=0)
+
+    class Meta:
+        verbose_name = 'Блог'
+        verbose_name_plural = 'Блоги'
+
+    def __str__(self):
+        return self.blog_title
+
