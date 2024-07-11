@@ -11,7 +11,7 @@ class Command(BaseCommand):
     def json_read_categories():
         """получение категорий с JSON-файла"""
 
-        with open('catalog_data.json', encoding='utf-8') as f:
+        with open('catalog_data2.json', encoding='utf-8') as f:
             content = json.load(f)
 
         categories = []
@@ -25,7 +25,7 @@ class Command(BaseCommand):
     def json_read_products():
         """ получение продуктов с JSON-файла"""
 
-        with open('catalog_data.json', encoding='utf-8') as f:
+        with open('catalog_data2.json', encoding='utf-8') as f:
             content = json.load(f)
 
         products = []
@@ -52,7 +52,7 @@ class Command(BaseCommand):
         Category.objects.bulk_create(category_for_create)
 
         for product in Command.json_read_products():
-            if product['fields']['product_category'].isnot(None):
+            if product['fields']['product_category'] != None:
                 prod_cat = Category.objects.get(pk=product['fields']['product_category'])
             else:
                 prod_cat = None
