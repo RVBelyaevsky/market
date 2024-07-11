@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
+from django.utils.text import slugify
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, UpdateView, DeleteView
 
 from catalog.models import Product, Blog
@@ -34,15 +35,30 @@ class BlogCreateView(CreateView):
 class BlogListView(ListView):
     model = Blog
 
+    def get_queryset(self, *args, **kwargs):
+        queryset = super().get_queryset()
+        queryset = queryset.filter(is_published=True)
+
+        return queryset
+
 
 class BlogDetailView(DetailView):
     model = Blog
+
+    def get_object(self, queryset=None):
+        self.object = super().get_object(queryset)
+        self.object.count_views += 1
+        self.object.save()
+
+        return self.object
 
 
 class BlogUpdateView(UpdateView):
     model = Blog
     fields = ('blog_title', 'blog_content',)
-    success_url = reverse_lazy('catalog:blog_list')
+    # success_url = reverse_lazy('catalog:blog_list')
+    def get_success_url(self):
+        return reverse('catalog:blog_detail', args=[self.kwargs.get('pk')])
 
 
 class BlogDeleteView(DeleteView):
