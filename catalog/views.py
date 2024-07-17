@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
-from django.utils.text import slugify
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, UpdateView, DeleteView
 
+from catalog.forms import ProductForm, BlogForm
 from catalog.models import Product, Blog
 
 
@@ -12,6 +12,25 @@ class CatalogListView(ListView):
 
 class CatalogDetailView(DetailView):
     model = Product
+
+
+class CatalogCreateView(CreateView):
+    model = Product
+    form_class = ProductForm
+    success_url = reverse_lazy('catalog:index')
+
+
+class CatalogUpdateView(UpdateView):
+    model = Product
+    form_class = ProductForm
+
+    def get_success_url(self):
+        return reverse('catalog:product', args=[self.kwargs.get('pk')])
+
+
+class CatalogDeleteView(DeleteView):
+    model = Product
+    success_url = reverse_lazy('catalog:index')
 
 
 class ContactTemplateView(TemplateView):
@@ -28,7 +47,7 @@ class ContactTemplateView(TemplateView):
 
 class BlogCreateView(CreateView):
     model = Blog
-    fields = ('blog_title', 'blog_slug', 'blog_content', 'blog_image', 'is_published')
+    form_class = BlogForm
     success_url = reverse_lazy('catalog:blog_list')
 
 
@@ -56,7 +75,7 @@ class BlogDetailView(DetailView):
 class BlogUpdateView(UpdateView):
     model = Blog
     fields = ('blog_title', 'blog_content',)
-    # success_url = reverse_lazy('catalog:blog_list')
+
     def get_success_url(self):
         return reverse('catalog:blog_detail', args=[self.kwargs.get('pk')])
 

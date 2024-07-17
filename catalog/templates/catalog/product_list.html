@@ -1,23 +1,32 @@
 {% extends 'catalog/base.html' %}
 {% load my_tags %}
 {% block content %}
-<div class="row text-center">
-    {% for product in object_list %}
-    <div class="col-3">
-        <div class="card mb-4 box-shadow">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">{{ product.product_name }}</h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">{{ product.product_price }} RUB</h1>
-                <img src="{{ product.product_image | media_filter }}">
-                <div>
-                    Описание:<br> {{ product.product_description|truncatechars:100 }}
-                </div>
-                <a role="button" class="btn btn-primary" href="{% url 'catalog:product' product.pk %}">Купить</a>
-            </div>
-        </div>
+    <div class="mb-5 d-flex justify-content-center align-items-center">
+        <a class="btn btn-primary" href="{% url 'catalog:product_create' %}">Добавить продукт</a>
     </div>
-    {% endfor %}
-</div>
+    <div class="row text-center">
+        {% for product in object_list %}
+            <div class="col-6">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">{{ product.product_name }}</h4>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title pricing-card-title">{{ product.product_price }} RUB</h3>
+                        <div>
+                            Описание:<br> {{ product.product_description|truncatechars:100 }}
+                        </div>
+                        <div class="btn-group" role="group">
+                            <a class="btn btn-outline-primary"
+                               href="{% url 'catalog:product' product.pk %}">Посмотреть</a>
+                            <a class="btn btn-outline-primary"
+                               href="{% url 'catalog:product_edit' product.pk %}">Редактировать</a>
+                            <a class="btn btn-outline-primary"
+                               href="{% url 'catalog:product_delete' product.pk %}">Удалить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
