@@ -25,6 +25,13 @@
                                href="{% url 'catalog:product_delete' product.pk %}">Удалить</a>
                         </div>
                     </div>
+                    <div class="card-footer">
+                        {% for version in product.version_set.all %}
+                            {% if version.is_current %}
+                                <p>Версия: №{{ version.number }} <br> Название: {{ version.name }}</p>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         {% endfor %}

@@ -1,6 +1,6 @@
 from django import forms
 
-from catalog.models import Product, Blog
+from catalog.models import Product, Blog, Version
 
 
 class ProductForm(forms.ModelForm):
@@ -33,3 +33,9 @@ class BlogForm(forms.ModelForm):
         model = Blog
         exclude = ('created_at', 'count_views',)
 
+
+class VersionForm(forms.ModelForm):
+
+    class Meta:
+        model = Version
+        fields = '__all__'
