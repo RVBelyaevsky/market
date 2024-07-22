@@ -24,8 +24,8 @@
       "product_image": "products/heiniken.png",
       "product_category": 1,
       "product_price": 98,
-      "created_at": "2024-07-04",
-      "updated_at": "2024-07-04"
+      "created_at": "2024-07-07",
+      "updated_at": "2024-07-07"
     }
   },
   {
@@ -37,8 +37,8 @@
       "product_image": "products/asahi.png",
       "product_category": 1,
       "product_price": 198,
-      "created_at": "2024-07-04",
-      "updated_at": "2024-07-04"
+      "created_at": "2024-07-07",
+      "updated_at": "2024-07-19"
     }
   },
   {
@@ -50,8 +50,8 @@
       "product_image": "products/redLable.png",
       "product_category": 11,
       "product_price": 900,
-      "created_at": "2024-07-04",
-      "updated_at": "2024-07-04"
+      "created_at": "2024-07-07",
+      "updated_at": "2024-07-07"
     }
   },
   {
@@ -63,8 +63,113 @@
       "product_image": "products/lawsons.png",
       "product_category": 11,
       "product_price": 700,
-      "created_at": "2024-07-04",
-      "updated_at": "2024-07-04"
+      "created_at": "2024-07-07",
+      "updated_at": "2024-07-07"
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 8,
+    "fields": {
+      "blog_title": "3",
+      "blog_slug": "blog3",
+      "blog_content": "svljnlkqhhsj;vgbieguir",
+      "blog_image": "",
+      "created_at": "2024-07-11T00:00:00Z",
+      "is_published": false,
+      "count_views": 0
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 9,
+    "fields": {
+      "blog_title": "3",
+      "blog_slug": "blog3",
+      "blog_content": "33333",
+      "blog_image": "",
+      "created_at": "2024-07-11T00:00:00Z",
+      "is_published": true,
+      "count_views": 4
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 10,
+    "fields": {
+      "blog_title": "new",
+      "blog_slug": "blog4",
+      "blog_content": "hello world redactirovanie",
+      "blog_image": "",
+      "created_at": "2024-07-11T00:00:00Z",
+      "is_published": true,
+      "count_views": 8
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 11,
+    "fields": {
+      "blog_title": "4",
+      "blog_slug": "blog5",
+      "blog_content": "5555555555555555",
+      "blog_image": "",
+      "created_at": "2024-07-11T00:00:00Z",
+      "is_published": false,
+      "count_views": 0
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 12,
+    "fields": {
+      "blog_title": "some blog",
+      "blog_slug": "blog6",
+      "blog_content": "texttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "blog_image": "",
+      "created_at": "2024-07-16T00:00:00Z",
+      "is_published": true,
+      "count_views": 1
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 2,
+    "fields": {
+      "number": 1,
+      "name": "asahi",
+      "is_current": true,
+      "product": 22
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 3,
+    "fields": {
+      "number": 1,
+      "name": "alfa",
+      "is_current": true,
+      "product": 24
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 4,
+    "fields": {
+      "number": 2,
+      "name": "beta",
+      "is_current": false,
+      "product": 24
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 5,
+    "fields": {
+      "number": 3,
+      "name": "good",
+      "is_current": true,
+      "product": 24
     }
   }
 ]

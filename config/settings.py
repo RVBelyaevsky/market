@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'catalog',
+    'users',
 
     "crispy_forms",
     "crispy_bootstrap4",
@@ -142,3 +143,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+AUTH_USER_MODEL = 'users.User'
