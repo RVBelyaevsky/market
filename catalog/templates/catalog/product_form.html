@@ -1,6 +1,6 @@
 {% extends 'catalog/base.html' %}
-{% load crispy_forms_filters %}
-{% load crispy_forms_tags %}
+{#{% load crispy_forms_filters %}#}
+{#{% load crispy_forms_tags %}#}
 {% block content %}
     <form method="post" enctype="multipart/form-data">
         <div class="col-12">
@@ -9,7 +9,7 @@
                     <div class="card">
                         <div class="card-body">
                             {% csrf_token %}
-                            {{ form|crispy }}
+                            {{ form.as_p }}
                             {% if object.pk %}
                                 <button type="submit" class="btn btn-primary">
                                     Сохранить
@@ -33,7 +33,10 @@
                         {% csrf_token %}
                         {{ formset.management_form }}
                         {% for form in formset.forms %}
-                        {{ form|crispy }}
+                        {{ form.as_p }}
+                            {% if not forloop.last %}
+                                <hr>
+                            {% endif %}
                         {% endfor %}
                     </div>
                 </div>
