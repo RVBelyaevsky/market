@@ -30,6 +30,7 @@ class Product(models.Model):
     updated_at = models.DateField(auto_now=True, null=True)
 
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, verbose_name='Владелец', **NULLABLE)
+    publication = models.BooleanField(verbose_name='Опубликовано', default=False)
 
     class Meta:
         verbose_name = 'Продукт'

@@ -71,7 +71,7 @@ class CatalogUpdateView(LoginRequiredMixin, UpdateView):
         return super().form_valid(form)
 
 
-class CatalogDeleteView(DeleteView):
+class CatalogDeleteView(LoginRequiredMixin, DeleteView):
     model = Product
     success_url = reverse_lazy('catalog:index')
 
